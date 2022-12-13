@@ -65,8 +65,8 @@ class SplitHTML:
 
 @click.command()
 @click.argument('infile', type=click.File('r'))
-@click.option('--chapterstart', '--cs', default=1)
-@click.option('--filetype', default="html")
+@click.option('--chapterstart', '-c', default=1)
+@click.option('--filetype', '-t', default="html")
 def main(infile, chapterstart: int, filetype: str):
     html: str = infile.read()
     split_html = SplitHTML(html=html, chapterstart=chapterstart, filetype=filetype)
